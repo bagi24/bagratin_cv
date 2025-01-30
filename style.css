@@ -1,0 +1,210 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Personal Info Section */
+.personal-info {
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+}
+
+.personal-info .profile h1 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.personal-info .profile .job-title {
+  font-size: 1em;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.personal-info .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.personal-info .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9em;
+  color: #f0f0f0;
+}
+
+.personal-info .contact-item i {
+  color: #3498db;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: inherit; /* მემკვიდრეობით მიიღებს მშობელი ელემენტის ფერს */
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #3498db; /* ლურჯი ფერი ჰოვერის დროს */
+}
+
+.personal-info .social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.personal-info .social-links .social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #f0f0f0;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.personal-info .social-links .social-link:hover {
+  color: #e67e22;
+}
+
+/* Main Content Section */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Skills Section */
+.skills h2,
+.experience h2,
+.projects h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  text-decoration: underline;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 5px;
+}
+
+.skills-grid div {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.skills-grid h3 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.skills-grid p {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Experience Section */
+.experience-item {
+  margin-bottom: 20px;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.company-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.company-info h3 {
+  font-size: 1.1em;
+  color: #2c3e50;
+}
+
+.company-info .company-name {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.company-info .date {
+  font-size: 0.8em;
+  color: #777;
+}
+
+.experience-item ul {
+  padding-left: 20px;
+}
+
+.experience-item ul li {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Projects Section */
+.project-item {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.project-item a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.project-item a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .personal-info {
+    text-align: left;
+  }
+
+  .personal-info .social-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
