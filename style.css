@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9;
@@ -32,6 +32,7 @@ main {
   border-radius: 8px;
   color: #fff;
   text-align: center;
+  width: 270px;
 }
 
 .personal-info .profile h1 {
@@ -40,10 +41,15 @@ main {
   font-weight: bold;
 }
 
-.personal-info .profile .job-title {
+.personal-info .profile {
   font-size: 1em;
   color: #f0f0f0;
   margin-bottom: 20px;
+}
+
+.job-title {
+  font-size: 0.8em;
+  color: #f0f0f0;
 }
 
 .personal-info .contact-info {
@@ -112,6 +118,10 @@ main {
   text-decoration: underline;
 }
 
+.experience p {
+  font-size: 0.8em !important;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -137,7 +147,7 @@ main {
 
 /* Experience Section */
 .experience-item {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .company-info {
@@ -175,7 +185,7 @@ main {
 .experience-item ul li {
   font-size: 0.9em;
   color: #555;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 /* Projects Section */
@@ -207,4 +217,170 @@ main {
     flex-direction: row;
     justify-content: center;
   }
+}
+.completed {
+  display: flex;
+  flex-direction: column;
+}
+
+.certificates {
+  background-color: #f9fafb;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.certificates h2 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 15px;
+  border-left: 4px solid #007acc;
+  padding-left: 10px;
+}
+
+.certificates ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.certificates li {
+  margin-bottom: 10px;
+}
+
+.certificates a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background-color: #007acc;
+  color: white;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.certificates a:hover {
+  background-color: #005fa3;
+  transform: translateY(-2px);
+}
+
+.certificates a::before {
+  content: "\f1c1"; /* PDF icon from Font Awesome */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Sidebar Skills Styles */
+.sidebar-skills {
+  margin-top: 30px;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.sidebar-skills h2 {
+  font-size: 1.3rem;
+  color: #3498db; /* ლურჯი სათაური */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  letter-spacing: 1px;
+}
+
+.skill-group {
+  margin-bottom: 20px;
+}
+
+.skill-group h3 {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: bold;
+  border-left: 3px solid #3498db;
+  padding-left: 10px;
+}
+
+.skill-group p,
+.skill-group ul {
+  font-size: 0.8rem;
+  color: #d1d5db; /* ღია ნაცრისფერი ტექსტი */
+  line-height: 1.6;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-group ul li {
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 0;
+}
+
+.skill-group strong {
+  color: #ffffff; /* მუქი თეთრი აქცენტებისთვის */
+}
+
+/* ძველი სექციის დამალვა, რომელიც თეთრ ფონზე იყო */
+.main-content .skills {
+  display: none;
+}
+
+/* Sidebar Certificates Styles */
+.sidebar-certificates {
+  margin-top: 30px;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.sidebar-certificates h2 {
+  font-size: 1.3rem;
+  color: #3498db;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar-certificates ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-certificates li {
+  margin-bottom: 10px;
+}
+
+.sidebar-certificates a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background: rgba(52, 152, 219, 0.15); /* ნაზი ლურჯი ფონი */
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.sidebar-certificates a:hover {
+  background: #3498db;
+  transform: translateX(5px); /* ჰოვერზე ოდნავ მარჯვნივ გაიწევა */
+}
+
+.sidebar-certificates i {
+  color: #3498db;
+  font-size: 1rem;
+}
+
+.sidebar-certificates a:hover i {
+  color: #fff;
+}
+
+/* ძველი სერტიფიკატების სექციის დამალვა მარჯვენა მხარეს */
+.main-content .certificates {
+  display: none;
 }
