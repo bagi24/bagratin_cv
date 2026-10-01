@@ -13,7 +13,7 @@ body {
   padding: 20px;
 }
 
-main {
+/* main {
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 30px;
@@ -23,16 +23,38 @@ main {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+main {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Personal Info Section */
-.personal-info {
+/* .personal-info {
   background: #2c3e50;
   padding: 20px;
   border-radius: 8px;
   color: #fff;
   text-align: center;
   width: 270px;
+} */
+
+.personal-info {
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
 }
 
 .personal-info .profile h1 {
@@ -383,4 +405,314 @@ main {
 /* ძველი სერტიფიკატების სექციის დამალვა მარჯვენა მხარეს */
 .main-content .certificates {
   display: none;
+}
+
+/* =========================================================
+   PRINT / PDF - A4 CV
+   ========================================================= */
+/* =========================================================
+   ONE PAGE A4 CV - PRINT VERSION
+   ========================================================= */
+/* =========================================================
+   ONE PAGE A4 CV - FINAL PRINT VERSION
+   ========================================================= */
+/* =========================================================
+   ONE PAGE A4 CV - PERFECT FIT (NO BOTTOM WHITE SPACE)
+   ========================================================= */
+/* =========================================================
+   A4 PRINT - EXACT MATCH TO IMAGE
+   ========================================================= */
+/* =========================================================
+   A4 PRINT - UPDATED ALIGNMENT & FONT SIZES
+   ========================================================= */
+/* =========================================================
+   A4 PRINT - LARGER TEXT SIZE & OPTIMIZED FIT
+   ========================================================= */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    background: #e9ecef !important;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    font-size: 10.5px;
+    line-height: 1.32;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* მთავარი თეთრი კონტეინერი */
+  main {
+    width: 196mm;
+    height: 283mm;
+    margin: 7mm auto;
+    padding: 0 !important;
+
+    display: grid;
+    grid-template-columns: 29% 71%;
+    gap: 0;
+
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: none;
+  }
+
+  /* ================= SIDEBAR (LEFT COLUMN) ================= */
+
+  .personal-info {
+    width: 100%;
+    height: 100%;
+    background: #2c3e50 !important;
+    padding: 8mm 6mm;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: left !important;
+    border-radius: 0;
+  }
+
+  .personal-info .profile {
+    text-align: left !important;
+    margin-bottom: 10px;
+  }
+
+  .personal-info .profile h1 {
+    font-size: 1.35em;
+    margin-bottom: 2px;
+    font-weight: bold;
+    color: #fff;
+    text-align: left !important;
+  }
+
+  .personal-info .profile p {
+    font-size: 0.95em;
+    color: #f0f0f0;
+    text-align: left !important;
+  }
+
+  .personal-info .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    align-items: flex-start !important;
+  }
+
+  .personal-info .contact-item {
+    font-size: 0.78em;
+    gap: 6px;
+    color: #f0f0f0;
+    justify-content: flex-start !important;
+    width: 100%;
+  }
+
+  .personal-info .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start !important;
+  }
+
+  .personal-info .social-links .social-link {
+    font-size: 0.78em;
+    gap: 6px;
+    color: #f0f0f0;
+    justify-content: flex-start !important;
+    width: 100%;
+  }
+
+  /* ================= SIDEBAR SKILLS ================= */
+
+  .sidebar-skills {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+  }
+
+  .sidebar-skills h2 {
+    font-size: 0.95rem;
+    color: #3498db !important;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .skill-group {
+    margin-bottom: 6px;
+  }
+
+  .skill-group h3 {
+    font-size: 0.75rem;
+    color: #ffffff;
+    margin-bottom: 2px;
+    padding-left: 4px;
+    border-left: 3px solid #3498db;
+  }
+
+  .skill-group p,
+  .skill-group ul {
+    font-size: 0.68rem;
+    line-height: 1.25;
+    color: #d1d5db;
+  }
+
+  .skill-group ul li {
+    margin-bottom: 2px;
+  }
+
+  /* ================= SIDEBAR CERTIFICATES ================= */
+
+  .sidebar-certificates {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+  }
+
+  .sidebar-certificates h2 {
+    font-size: 0.95rem;
+    color: #3498db !important;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .sidebar-certificates li {
+    margin-bottom: 4px;
+  }
+
+  .sidebar-certificates a {
+    padding: 4px 6px;
+    font-size: 0.68rem;
+    background: rgba(52, 152, 219, 0.15) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ================= MAIN CONTENT (RIGHT COLUMN) ================= */
+
+  .main-content {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    padding: 8mm 8mm 8mm 7mm; /* კომპაქტური შიდა დაშორება ტექსტის ჩასატევად */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  .skills h2,
+  .experience h2,
+  .projects h2 {
+    font-size: 1.25em;
+    margin-bottom: 4px;
+    color: #2c3e50 !important;
+    text-decoration: underline;
+  }
+
+  /* ================= EXPERIENCE ================= */
+
+  .experience-item {
+    margin-bottom: 6px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .company-info {
+    gap: 6px;
+    margin-bottom: 2px;
+  }
+
+  .company-info img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .company-info h3 {
+    font-size: 0.98em; /* გაზრდილი პოზიციის დასახელება */
+    color: #2c3e50 !important;
+  }
+
+  .company-info .company-name {
+    font-size: 0.82em; /* გაზრდილი კომპანიის სახელი */
+  }
+
+  .company-info .date {
+    font-size: 0.72em;
+  }
+
+  .experience-item ul {
+    padding-left: 14px;
+  }
+
+  .experience-item ul li {
+    font-size: 0.82em; /* გაზრდილი ტექსტის შრიფტი */
+    line-height: 1.32;
+    margin-bottom: 1px;
+    color: #333;
+  }
+
+  /* ================= PROJECTS & FRONTEND DEVELOPMENT ================= */
+
+  .project-category {
+    margin-top: 2px;
+  }
+
+  .project-category h3 {
+    font-size: 0.95em !important; /* გაზრდილი კატეგორიის სათაური */
+    margin-bottom: 3px;
+  }
+
+  .project-item {
+    font-size: 0.82em; /* გაზრდილი ტექსტის შრიფტი */
+    line-height: 1.32;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .project-item h4 {
+    font-size: 0.9em; /* გაზრდილი პროექტის სათაური */
+    margin-bottom: 2px;
+    color: #2c3e50 !important;
+  }
+
+  .project-item ul li {
+    font-size: 0.82em; /* გაზრდილი ტექსტის შრიფტი */
+    line-height: 1.32;
+  }
+
+  /* ================= GENERAL FIXES ================= */
+
+  .main-content .skills,
+  .main-content .certificates {
+    display: none !important;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
